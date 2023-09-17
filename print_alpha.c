@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _putchar - prints a char
+ * _putchar - Prints a char
  * @c: char
- * @count: number of bytes printed.
+ * @Count: number of bytes printed.
  * Return: 1 if success, -1 if not.
  */
 void	_putchar(char c, int *count)
@@ -15,7 +15,7 @@ void	_putchar(char c, int *count)
 /**
  * print_str - prints a string.
  * @str: string to be printed.
- * @count: Pointer to the character count.
+ * @Count: Pointer to the character count.
  * Return: nothing.
  */
 
