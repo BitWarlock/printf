@@ -16,6 +16,8 @@ static void	flag_handle(va_list args, const char format, int *count)
 		print_str(va_arg(args, char *), count);
 	else if (format == '%')
 		_putchar(format, count);
+	else if (format == 'd' || format == 'i')
+		putnbr(va_arg(args, int), count);
 }
 
 /**

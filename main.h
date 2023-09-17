@@ -10,5 +10,6 @@
 int	_printf(const char *format, ...);
 void	_putchar(char c, int *count);
 void	print_str(char *str, int *count);
+void	putnbr(int n, int *count);
 
 #endif
