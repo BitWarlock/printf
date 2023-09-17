@@ -51,7 +51,7 @@ void	print_num_u(unsigned int n, int *count)
  * Return: nothing.
  */
 
-void	print_binary(int n, int *count)
+void	print_binary(unsigned int n, int *count)
 {
 	if (n == 0)
 	{
@@ -59,9 +59,9 @@ void	print_binary(int n, int *count)
 		return;
 	}
 
-	int	binary[32];
-	int	i = 0;
-	int	j;
+	unsigned int	binary[32];
+	unsigned int	i = 0;
+	unsigned int	j;
 
 	if (n < 0)
 	{
