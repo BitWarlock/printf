@@ -48,8 +48,8 @@ int	_printf(const char *format, ...)
 				return (-1);
 			while (*format == ' ')
 				format++;
+			++format;
 			flag_handle(args, *format, &count);
-			format++;
 		}
 		else
 			_putchar(*format, &count);
