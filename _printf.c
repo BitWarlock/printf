@@ -28,14 +28,23 @@ int	_printf(const char *format, ...)
 						break;
 					}
 				case 's':
-					print_str(va_arg(args, char *), &count);
-					break;
+					{
+						char	*str = va_arg(args, char *);
+						if (str)
+							print_str(str, &count);
+						else
+							print_str("(null)", &count);
+						break;
+					}
 				case '%':
 					_putchar('%');
 					count++;
 					break;
 				default:
-					format++;
+					_putchar('%');
+					count++;
+					_putchar(*format);
+					count++;
 					break;
 			}
 		}
