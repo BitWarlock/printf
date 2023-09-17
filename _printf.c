@@ -18,6 +18,8 @@ static void	flag_handle(va_list args, const char format, int *count)
 		_putchar(format, count);
 	else if (format == 'd' || format == 'i')
 		putnbr(va_arg(args, int), count);
+	else if (format == 'u')
+		print_num_u(va_arg(args, unsigned int), count);
 }
 
 /**
