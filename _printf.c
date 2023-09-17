@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * Flag_handle - handles formatting flags for _printf.
+ * Flag_handle - Handles formatting flags for _printf.
  * @args: argument list.
  * @Format: format string.
  * @Count: number of bytes printed.
