@@ -6,6 +6,7 @@
  * Return: void.
  */
 void printxo(unsigned int n, char format, int *count)
+
 {
     unsigned int len;
     char *base;
