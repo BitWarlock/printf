@@ -7,7 +7,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int _printf(const char *format, ...);
-void _putchar(char c);
+int	_printf(const char *format, ...);
+int	_putchar(char c);
+void	print_str(const char *str, int *count);
 
 #endif
