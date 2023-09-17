@@ -13,5 +13,6 @@ void	print_str(char *str, int *count);
 void	putnbr(int n, int *count);
 void	print_num_u(unsigned int n, int *count);
 void	print_binary(unsigned int n, int *count);
+void	printxo(unsigned int n, char format, int *count);
 
 #endif
