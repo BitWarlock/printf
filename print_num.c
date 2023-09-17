@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * putnbr - function to print an int.
+ * putnbr - Function to print an int.
  * @n: number to print.
- * @count: bytes printed.
+ * @Count: bytes printed.
  * Return: nothing.
  */
 
@@ -27,9 +27,9 @@ void	putnbr(int n, int *count)
 }
 
 /**
- * print_num_u - function to print unsigned decimal.
+ * print_num_u - Function to print unsigned decimal.
  * @n: number to print.
- * @count: bytes printed.
+ * @Count: bytes printed.
  * Return: nothing.
  */
 
