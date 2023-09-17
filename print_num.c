@@ -76,6 +76,6 @@ void	print_binary(int n, int *count)
 		i++;
 	}
 
-	for (j = i - 1; j >= 0; j++)
+	for (j = i - 1; j >= 0; j--)
 		_putchar(binary[j] + 48, count);
 }

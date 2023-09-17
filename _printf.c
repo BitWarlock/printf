@@ -20,6 +20,8 @@ static void	flag_handle(va_list args, const char format, int *count)
 		putnbr(va_arg(args, int), count);
 	else if (format == 'u')
 		print_num_u(va_arg(args, unsigned int), count);
+	else if (format == 'b')
+		print_binary(va_arg(args, int), count);
 }
 
 /**
