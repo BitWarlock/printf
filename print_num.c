@@ -25,3 +25,20 @@ void	putnbr(int n, int *count)
 		putnbr(nb % 10, count);
 	}
 }
+**
+ * print_num_u - function to print unsigned decimal.
+ * @n: number to print.
+ * @count: bytes printed.
+ * Return: nothing.
+ */
+	
+void  print_num_u(unsigned int n, int *count)
+{
+      if (n < 10)
+            _putchar(n + 48, count);
+      else
+      {
+            putnbr(n / 10, count);
+            putnbr(n % 10, count);
+      }
+}
