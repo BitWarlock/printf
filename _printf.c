@@ -1,60 +1,46 @@
 #include "main.h"
 
 /**
- * _printf - recreation of stdio printf funtion.
- * @format: the format string.
- * Return: numberof printed bytes.
+ * flag_handle - handles formatting flags for _printf.
+ * @args: argument list.
+ * @format: format string.
+ * @count: number of bytes printed.
+ * Return: void.
+ */
+
+static void	flag_handle(va_list args, const char format, int *count)
+{
+	if (format == 'c')
+		_putchar((char)va_arg(args, int), count);
+	else if (format == 's')
+		print_str(va_arg(args, char *), count);
+	else if (format == '%')
+		_putchar(format, count);
+}
+
+/**
+ * _printf - custom stdio printf.
+ * @format: format string.
+ * Return: The number of bytes printed.
  */
 
 int	_printf(const char *format, ...)
 {
-	va_list	args;
-	int	count = 0;
+	va_list args;
+	int count = 0;
 
 	va_start(args, format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
-			format++;
-			switch (*format)
-			{
-				case 'c':
-					{
-						char	c = (char)va_arg(args, int);
-
-						_putchar(c);
-						count++;
-						break;
-					}
-				case 's':
-					{
-						char	*str = va_arg(args, char *);
-						if (str)
-							print_str(str, &count);
-						else
-							print_str("(null)", &count);
-						break;
-					}
-				case '%':
-					_putchar('%');
-					count++;
-					break;
-				default:
-					_putchar('%');
-					count++;
-					_putchar(*format);
-					count++;
-					break;
-			}
+			++format;
+			flag_handle(args, *format, &count);
 		}
 		else
-		{
-			_putchar(*format);
-			count++;
-		}
+			_putchar(*format, &count);
 		format++;
 	}
-		va_end(args);
-		return (count);
+	va_end(args);
+	return (count);
 }

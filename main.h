@@ -8,7 +8,7 @@
 #include <unistd.h>
 
 int	_printf(const char *format, ...);
-int	_putchar(char c);
-void	print_str(const char *str, int *count);
+void	_putchar(char c, int *count);
+void	print_str(char *str, int *count);
 
 #endif

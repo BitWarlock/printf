@@ -3,11 +3,13 @@
 /**
  * _putchar - prints a char
  * @c: char
+ * @count: number of bytes printed.
  * Return: 1 if success, -1 if not.
  */
-int	_putchar(char c)
+void	_putchar(char c, int *count)
 {
-	return (write(1, &c, 1));
+	write(1, &c, 1);
+	(*count)++;
 }
 
 /**
@@ -17,12 +19,13 @@ int	_putchar(char c)
  * Return: nothing.
  */
 
-void	print_str(const char *str, int *count)
+void	print_str(char *str, int *count)
 {
-	while (*str)
+	if (str == NULL)
+		print_str("(null)", count);
+	while (*str && str)
 	{
-		_putchar(*str);
-		(*count)++;
+		_putchar(*str, count);
 		str++;
 	}
 }
