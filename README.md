@@ -16,7 +16,7 @@ The format string consists of directives, ordinary characters (not %), and conve
 - `+`: Always includes a sign (+ or -) for signed conversions.
 
 #### Field Width
-- Specifies a minimum field width (decimal or *). 
+- Specifies a minimum field width (decimal or *).
 
 #### Precision
 - Optional precision defined by a period (.) followed by a decimal digit string or *.
