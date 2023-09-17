@@ -65,6 +65,9 @@ int	_printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
+<<<<<<< HEAD
 	charput(-1);
+=======
+>>>>>>> parent of f77c028 (bug)
 	return (count);
 }
