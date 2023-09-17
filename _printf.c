@@ -11,11 +11,11 @@
 static void	flag_handle(va_list args, const char format, int *count)
 {
 	if (format == 'c')
-		_putchar((char)va_arg(args, int), count);
+		_putchar(va_arg(args, int), count);
 	else if (format == 's')
 		print_str(va_arg(args, char *), count);
 	else if (format == '%')
-		_putchar(format, count);
+		_putchar('%', count);
 	else if (format == 'd' || format == 'i')
 		putnbr(va_arg(args, int), count);
 	else if (format == 'u')
@@ -24,17 +24,6 @@ static void	flag_handle(va_list args, const char format, int *count)
 		printxo(va_arg(args, unsigned int), format, count);
 	else if (format == 'b')
 		print_binary(va_arg(args, unsigned int), count);
-}
-
-/**
- * charput - prints char.
- * @c: char.
- * Return: void.
- */
-
-void	charput(char c)
-{
-	write(1, &c, 1);
 }
 
 /**
@@ -50,13 +39,13 @@ int	_printf(const char *format, ...)
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
 	va_start(args, format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
+			if (format[1] == ' ')
+				format++;
 			++format;
 			flag_handle(args, *format, &count);
 		}

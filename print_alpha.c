@@ -30,7 +30,6 @@ void	print_str(char *str, int *count)
 			_putchar(*s, count);
 			s++;
 		}
-		count += 6;
 	}
 	else
 	{
