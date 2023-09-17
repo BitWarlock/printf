@@ -27,6 +27,17 @@ static void	flag_handle(va_list args, const char format, int *count)
 }
 
 /**
+ * charput - prints char.
+ * @c: char.
+ * Return: void.
+ */
+
+void	charput(char c)
+{
+	write(1, &c, 1);
+}
+
+/**
  * _printf - custom stdio printf.
  * @format: format string.
  * Return: The number of bytes printed.
@@ -54,6 +65,6 @@ int	_printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
-	write (1, "-1", 1);
+	charput(-1);
 	return (count);
 }
