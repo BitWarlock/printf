@@ -33,7 +33,7 @@ void	print_str(char *str, int *count)
 	}
 	else
 	{
-		while (*str && str)
+		while (*str)
 		{
 			_putchar(*str, count);
 			str++;
