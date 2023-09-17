@@ -22,10 +22,22 @@ void	_putchar(char c, int *count)
 void	print_str(char *str, int *count)
 {
 	if (str == NULL)
-		print_str("(null)", count);
-	while (*str && str)
 	{
-		_putchar(*str, count);
-		str++;
+		char *s = "(null)";
+
+		while (*s)
+		{
+			_putchar(*s, count);
+			s++;
+		}
+		count += 6;
+	}
+	else
+	{
+		while (*str && str)
+		{
+			_putchar(*str, count);
+			str++;
+		}
 	}
 }
