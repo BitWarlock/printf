@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * putnbr - function that prints a number.
+ * print_num_u - function to print unsigned decimal.
  * @n: number to print.
  * @count: bytes printed.
- * Return: void.
+ * Return: nothing.
  */
 
 void	putnbr(int n, int *count)
