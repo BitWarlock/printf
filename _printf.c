@@ -44,7 +44,9 @@ int	_printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			if (format[1] == ' ')
+			if (*format == '\0')
+				return (-1);
+			while (*format == ' ')
 				format++;
 			++format;
 			flag_handle(args, *format, &count);
