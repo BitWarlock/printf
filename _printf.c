@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * Flag_handle - Handles formatting flags for _printf.
+ * flag_handle - handles formatting flags for _printf.
  * @args: argument list.
  * @Format: format string.
- * @Count: number of bytes printed.
+ * @count: number of bytes printed.
  * Return: void.
  */
 
@@ -24,7 +24,7 @@ static void	flag_handle(va_list args, const char format, int *count)
 
 /**
  * _printf - custom stdio printf.
- * @Format: format string.
+ * @format: format string.
  * Return: The number of bytes printed.
  */
 
