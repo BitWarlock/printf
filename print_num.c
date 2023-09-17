@@ -43,3 +43,39 @@ void	print_num_u(unsigned int n, int *count)
 		putnbr(n % 10, count);
 	}
 }
+
+/**
+ * print_binary - prints in binary.
+ * @n: number to print.
+ * @count: bytes printed.
+ * Return: nothing.
+ */
+
+void	print_binary(int n, int *count)
+{
+	if (n == 0)
+	{
+		_putchar('0', count);
+		return;
+	}
+
+	int	binary[32];
+	int	i = 0;
+	int	j;
+
+	if (n < 0)
+	{
+		_putchar('-', count);
+		n *= -1;
+	}
+
+	while (n > 0)
+	{
+		binary[i] = n % 2;
+		n /= 2;
+		i++;
+	}
+
+	for (j = i - 1; j >= 0; j++)
+		_putchar(binary[j] + 48, count);
+}
