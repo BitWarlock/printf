@@ -35,13 +35,7 @@ int	_printf(const char *format, ...)
 					count++;
 					break;
 				default:
-					_putchar('%');
-					count++;
-					if (*format)
-					{
-						count++;
-						_putchar(*format);
-					}
+					format++;
 					break;
 			}
 		}
