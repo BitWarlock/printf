@@ -53,29 +53,22 @@ void	print_num_u(unsigned int n, int *count)
 
 void	print_binary(unsigned int n, int *count)
 {
+	char	binary[33];
+	int	i = 0;
+	int	j;
+
 	if (n == 0)
 	{
 		_putchar('0', count);
 		return;
 	}
 
-	unsigned int	binary[32];
-	unsigned int	i = 0;
-	unsigned int	j;
-
-	if (n < 0)
-	{
-		_putchar('-', count);
-		n *= -1;
-	}
-
 	while (n > 0)
 	{
-		binary[i] = n % 2;
+		binary[i++] = (n % 2) + 48;
 		n /= 2;
-		i++;
 	}
 
 	for (j = i - 1; j >= 0; j--)
-		_putchar(binary[j] + 48, count);
+		_putchar(binary[j], count);
 }
