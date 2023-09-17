@@ -3,7 +3,7 @@
 /**
  * flag_handle - handles formatting flags for _printf.
  * @args: argument list.
- * @Format: format string.
+ * @format: format string.
  * @count: number of bytes printed.
  * Return: void.
  */
