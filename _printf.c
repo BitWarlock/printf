@@ -44,7 +44,6 @@ int	_printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			count++;
 			if (*format == '\0')
 				return (-1);
 			++format;
