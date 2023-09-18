@@ -44,9 +44,9 @@ int	_printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			++format;
-			if (*(format + 1) == '\0')
+			if (*format == '\0')
 				return (-1);
+			++format;
 			flag_handle(args, *format, &count);
 		}
 		else
