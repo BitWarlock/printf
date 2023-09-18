@@ -42,7 +42,7 @@ int	_printf(const char *format, ...)
 	va_start(args, format);
 	while (*format)
 	{
-		if (*format == '%')
+		if (*(format + 1) == '%')
 		{
 			if (*format == '\0')
 				return (-1);
