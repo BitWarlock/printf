@@ -4,7 +4,7 @@
  * _putchar - prints a char
  * @c: char
  * @count: number of bytes printed.
- * Return: 1 if success, -1 if not.
+ * Return: void.
  */
 void	_putchar(char c, int *count)
 {
