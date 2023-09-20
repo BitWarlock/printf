@@ -1,58 +1,50 @@
 #include "main.h"
 
 /**
- * flag_handle - handles formatting flags for _printf.
- * @args: argument list.
- * @format: format string.
- * @count: number of bytes printed.
- * Return: void.
- */
-
-static void	flag_handle(va_list args, const char format, int *count)
-{
-	if (format == 'c')
-		_putchar(va_arg(args, int), count);
-	else if (format == 's')
-		print_str(va_arg(args, char *), count);
-	else if (format == '%')
-		_putchar('%', count);
-	else if (format == 'd' || format == 'i')
-		putnbr(va_arg(args, int), count);
-	else if (format == 'u')
-		print_num_u(va_arg(args, unsigned int), count);
-	else if (format == 'x' || format == 'X' || format == 'o')
-		printxo(va_arg(args, unsigned int), format, count);
-	else if (format == 'b')
-		print_binary(va_arg(args, unsigned int), count);
-}
-
-/**
  * _printf - custom stdio printf.
  * @format: format string.
  * Return: The number of bytes printed.
  */
 
-int	_printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
+	const char *s;
 	va_list args;
-	int count = 0;
+	flag_t flags = {0, 0, 0};
 
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
+	register int count = 0;
+
+	int (*pfun)(va_list, flag_t *);
+
 	va_start(args, format);
-	while (*format)
+	if (!format || (format[0] == '%' && !format[1]) ||
+			(format[0] == '%' && format[1] == ' ' && !format[2]))
+		return (-1);
+
+	for (s = format; *s; s++)
 	{
-		if (*format == '%')
+		if (*s == '%')
 		{
-			if (*format == '\0')
-				return (-1);
-			++format;
-			flag_handle(args, *format, &count);
+			s++;
+			if (*s == '%')
+			{
+				count += _putchar('%');
+				continue;
+			}
+			while (get_flag(*s, &flags))
+				s++;
+			pfun = get_print(*s);
+			count += (pfun)
+				? pfun(args, &flags)
+				: _printf("%%%c", *s);
 		}
 		else
-			_putchar(*format, &count);
-		format++;
+			count += _putchar(*s);
 	}
+
+	_putchar(-1);
 	va_end(args);
+
 	return (count);
 }
+
